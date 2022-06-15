@@ -1,0 +1,21 @@
+{
+  "name": "futapostas",
+  "version": "1.0.0",
+  "description": "A website for beting on Football",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Franwernke/Futapostas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "pg": "^8.7.3"
+  }
+}
