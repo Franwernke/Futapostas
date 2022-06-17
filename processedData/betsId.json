@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "valor": 1500.4,
+    "valor": 1500,
     "tipo": "escalação",
     "lucro_ou_perda": "lucro",
     "usuario": 1,
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "valor": 1700,
+    "valor": 222,
     "tipo": "time_vencedor",
     "lucro_ou_perda": "perda",
     "usuario": 2,
