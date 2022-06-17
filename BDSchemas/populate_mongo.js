@@ -66194,5 +66194,30 @@ db.jogo.insertMany([
     }
 ]);
 
-db.usuario.insertMany();
+db.usuario.insertMany([
+    {
+      "id": 1,
+      "carteira": 24.5,
+      "privacidade_do_perfil": true,
+      "cpf": "545.269.123-87",
+      "nome": "John Doe",
+      "email": "john.doe@email.com"
+    },
+    {
+      "id": 2,
+      "carteira": 205,
+      "privacidade_do_perfil": false,
+      "cpf": "324.624.233-92",
+      "nome": "Phillipe Rogers",
+      "email": "phillipe.rogers@email.com"
+    },
+    {
+      "id": 3,
+      "carteira": 0,
+      "privacidade_do_perfil": false,
+      "cpf": "343.424.512-12",
+      "nome": "Mathew Shawman",
+      "email": "mathew.shawman@email.com"
+    }
+  ]);
 
