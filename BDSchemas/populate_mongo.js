@@ -1,131 +1,393 @@
 db = db.getMongo().getDB("futapostas");
 
 db.times.insertMany([
-{
-    "id":50, 
-    "name":"Manchester City", 
-    "leagues":[
-    {"league_name":"premier league","rank":1, "points":98, "games":{"draw": 2, "goals": {"against": 23, "for": 95}, "lose": 4, "played": 38, "win": 32}, "goalsDiff":72}]
-},
-{
-    "id":40, 
-    "name":"Liverpool", 
-    "leagues":[
-    {"league_name":"premier league","rank":2, "points":97, "games":{"draw": 7, "goals": {"against": 22, "for": 89}, "lose": 1, "played": 38, "win": 30}, "goalsDiff":67}]
-},
-{
-    "id":49, 
-    "name":"Chelsea", 
-    "leagues":[
-    {"league_name":"premier league","rank":3, "points":72, "games":{"draw": 9, "goals": {"against": 39, "for": 63}, "lose": 8, "played": 38, "win": 21}, "goalsDiff":24}]
-},
-{
-    "id":47, 
-    "name":"Tottenham", 
-    "leagues":[
-    {"league_name":"premier league","rank":4, "points":71, "games":{"draw": 2, "goals": {"against": 39, "for": 67}, "lose": 13, "played": 38, "win": 23}, "goalsDiff":28}]
-},
-{
-    "id":42, 
-    "name":"Arsenal", 
-    "leagues":[
-    {"league_name":"premier league","rank":5, "points":70, "games":{"draw": 7, "goals": {"against": 51, "for": 73}, "lose": 10, "played": 38, "win": 21}, "goalsDiff":22}]
-},
-{
-    "id":33, 
-    "name":"Manchester United", 
-    "leagues":[
-    {"league_name":"premier league","rank":6, "points":66, "games":{"draw": 9, "goals": {"against": 54, "for": 65}, "lose": 10, "played": 38, "win": 19}, "goalsDiff":11}]
-},
-{
-    "id":39, 
-    "name":"Wolves", 
-    "leagues":[
-    {"league_name":"premier league","rank":7, "points":57, "games":{"draw": 9, "goals": {"against": 46, "for": 47}, "lose": 13, "played": 38, "win": 16}, "goalsDiff":1}]
-},
-{
-    "id":45, 
-    "name":"Everton", 
-    "leagues":[
-    {"league_name":"premier league","rank":8, "points":54, "games":{"draw": 9, "goals": {"against": 46, "for": 54}, "lose": 14, "played": 38, "win": 15}, "goalsDiff":8}]
-},
-{
-    "id":46, 
-    "name":"Leicester", 
-    "leagues":[
-    {"league_name":"premier league","rank":9, "points":52, "games":{"draw": 7, "goals": {"against": 48, "for": 51}, "lose": 16, "played": 38, "win": 15}, "goalsDiff":3}]
-},
-{
-    "id":48, 
-    "name":"West Ham", 
-    "leagues":[
-    {"league_name":"premier league","rank":10, "points":52, "games":{"draw": 7, "goals": {"against": 55, "for": 52}, "lose": 16, "played": 38, "win": 15}, "goalsDiff":-3}]
-},
-{
-    "id":38, 
-    "name":"Watford", 
-    "leagues":[
-    {"league_name":"premier league","rank":11, "points":50, "games":{"draw": 8, "goals": {"against": 59, "for": 52}, "lose": 16, "played": 38, "win": 14}, "goalsDiff":-7}]
-},
-{
-    "id":52, 
-    "name":"Crystal Palace", 
-    "leagues":[
-    {"league_name":"premier league","rank":12, "points":49, "games":{"draw": 7, "goals": {"against": 53, "for": 51}, "lose": 17, "played": 38, "win": 14}, "goalsDiff":-2}]
-},
-{
-    "id":34, 
-    "name":"Newcastle", 
-    "leagues":[
-    {"league_name":"premier league","rank":13, "points":45, "games":{"draw": 9, "goals": {"against": 48, "for": 42}, "lose": 17, "played": 38, "win": 12}, "goalsDiff":-6}]
-},
-{
-    "id":35, 
-    "name":"Bournemouth", 
-    "leagues":[
-    {"league_name":"premier league","rank":14, "points":45, "games":{"draw": 6, "goals": {"against": 70, "for": 56}, "lose": 19, "played": 38, "win": 13}, "goalsDiff":-14}]
-},
-{
-    "id":44, 
-    "name":"Burnley", 
-    "leagues":[
-    {"league_name":"premier league","rank":15, "points":40, "games":{"draw": 7, "goals": {"against": 68, "for": 45}, "lose": 20, "played": 38, "win": 11}, "goalsDiff":-23}]
-},
-{
-    "id":41, 
-    "name":"Southampton", 
-    "leagues":[
-    {"league_name":"premier league","rank":16, "points":39, "games":{"draw": 12, "goals": {"against": 65, "for": 45}, "lose": 17, "played": 38, "win": 9}, "goalsDiff":-20}]
-},
-{
-    "id":51, 
-    "name":"Brighton", 
-    "leagues":[
-    {"league_name":"premier league","rank":17, "points":36, "games":{"draw": 9, "goals": {"against": 60, "for": 35}, "lose": 20, "played": 38, "win": 9}, "goalsDiff":-25}]
-},
-{
-    "id":43, 
-    "name":"Cardiff", 
-    "leagues":[
-    {"league_name":"premier league","rank":18, "points":34, "games":{"draw": 4, "goals": {"against": 69, "for": 34}, "lose": 24, "played": 38, "win": 10}, "goalsDiff":-35}]
-},
-{
-    "id":36, 
-    "name":"Fulham", 
-    "leagues":[
-    {"league_name":"premier league","rank":19, "points":26, "games":{"draw": 5, "goals": {"against": 81, "for": 34}, "lose": 26, "played": 38, "win": 7}, "goalsDiff":-47}]
-},
-{
-    "id":37, 
-    "name":"Huddersfield", 
-    "leagues":[
-    {"league_name":"premier league","rank":20, "points":16, "games":{"draw": 7, "goals": {"against": 76, "for": 22}, "lose": 28, "played": 38, "win": 3}, "goalsDiff":-54}]}
+    {
+      "id": 50,
+      "name": "Manchester City",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 1,
+          "points": 98,
+          "games": {
+            "draw": 2,
+            "goals": { "against": 23, "for": 95 },
+            "lose": 4,
+            "played": 38,
+            "win": 32
+          },
+          "goalsDiff": 72
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Liverpool",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 2,
+          "points": 97,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 22, "for": 89 },
+            "lose": 1,
+            "played": 38,
+            "win": 30
+          },
+          "goalsDiff": 67
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Chelsea",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 3,
+          "points": 72,
+          "games": {
+            "draw": 9,
+            "goals": { "against": 39, "for": 63 },
+            "lose": 8,
+            "played": 38,
+            "win": 21
+          },
+          "goalsDiff": 24
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Tottenham",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 4,
+          "points": 71,
+          "games": {
+            "draw": 2,
+            "goals": { "against": 39, "for": 67 },
+            "lose": 13,
+            "played": 38,
+            "win": 23
+          },
+          "goalsDiff": 28
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Arsenal",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 5,
+          "points": 70,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 51, "for": 73 },
+            "lose": 10,
+            "played": 38,
+            "win": 21
+          },
+          "goalsDiff": 22
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Manchester United",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 6,
+          "points": 66,
+          "games": {
+            "draw": 9,
+            "goals": { "against": 54, "for": 65 },
+            "lose": 10,
+            "played": 38,
+            "win": 19
+          },
+          "goalsDiff": 11
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Wolves",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 7,
+          "points": 57,
+          "games": {
+            "draw": 9,
+            "goals": { "against": 46, "for": 47 },
+            "lose": 13,
+            "played": 38,
+            "win": 16
+          },
+          "goalsDiff": 1
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Everton",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 8,
+          "points": 54,
+          "games": {
+            "draw": 9,
+            "goals": { "against": 46, "for": 54 },
+            "lose": 14,
+            "played": 38,
+            "win": 15
+          },
+          "goalsDiff": 8
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Leicester",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 9,
+          "points": 52,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 48, "for": 51 },
+            "lose": 16,
+            "played": 38,
+            "win": 15
+          },
+          "goalsDiff": 3
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "name": "West Ham",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 10,
+          "points": 52,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 55, "for": 52 },
+            "lose": 16,
+            "played": 38,
+            "win": 15
+          },
+          "goalsDiff": -3
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Watford",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 11,
+          "points": 50,
+          "games": {
+            "draw": 8,
+            "goals": { "against": 59, "for": 52 },
+            "lose": 16,
+            "played": 38,
+            "win": 14
+          },
+          "goalsDiff": -7
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Crystal Palace",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 12,
+          "points": 49,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 53, "for": 51 },
+            "lose": 17,
+            "played": 38,
+            "win": 14
+          },
+          "goalsDiff": -2
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Newcastle",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 13,
+          "points": 45,
+          "games": {
+            "draw": 9,
+            "goals": { "against": 48, "for": 42 },
+            "lose": 17,
+            "played": 38,
+            "win": 12
+          },
+          "goalsDiff": -6
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Bournemouth",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 14,
+          "points": 45,
+          "games": {
+            "draw": 6,
+            "goals": { "against": 70, "for": 56 },
+            "lose": 19,
+            "played": 38,
+            "win": 13
+          },
+          "goalsDiff": -14
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Burnley",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 15,
+          "points": 40,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 68, "for": 45 },
+            "lose": 20,
+            "played": 38,
+            "win": 11
+          },
+          "goalsDiff": -23
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Southampton",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 16,
+          "points": 39,
+          "games": {
+            "draw": 12,
+            "goals": { "against": 65, "for": 45 },
+            "lose": 17,
+            "played": 38,
+            "win": 9
+          },
+          "goalsDiff": -20
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Brighton",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 17,
+          "points": 36,
+          "games": {
+            "draw": 9,
+            "goals": { "against": 60, "for": 35 },
+            "lose": 20,
+            "played": 38,
+            "win": 9
+          },
+          "goalsDiff": -25
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Cardiff",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 18,
+          "points": 34,
+          "games": {
+            "draw": 4,
+            "goals": { "against": 69, "for": 34 },
+            "lose": 24,
+            "played": 38,
+            "win": 10
+          },
+          "goalsDiff": -35
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Fulham",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 19,
+          "points": 26,
+          "games": {
+            "draw": 5,
+            "goals": { "against": 81, "for": 34 },
+            "lose": 26,
+            "played": 38,
+            "win": 7
+          },
+          "goalsDiff": -47
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Huddersfield",
+      "leagues": [
+        {
+          "league_name": "premier league",
+          "rank": 20,
+          "points": 16,
+          "games": {
+            "draw": 7,
+            "goals": { "against": 76, "for": 22 },
+            "lose": 28,
+            "played": 38,
+            "win": 3
+          },
+          "goalsDiff": -54
+        }
+      ]
+    }
 ]);
 
 // ---------------------------------------------------------------------------------------------------
 db.jogador.insertMany([
     {
-        "160":
+        "id":160,
+        "info":
         {
             "age": 38,
             "birth": {
@@ -221,7 +483,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18757":
+        "id":18757,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -317,7 +580,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18774":
+        "id":18774,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -413,7 +677,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18789":
+        "id":18789,
+        "info":
         {
             "age": 40,
             "birth": {
@@ -509,7 +774,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18801":
+        "id":18801,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -605,7 +871,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18818":
+        "id":18818,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -701,7 +968,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18837":
+        "id":18837,
+        "info":
         {
             "age": 42,
             "birth": {
@@ -797,7 +1065,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18865":
+        "id":18865,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -893,7 +1162,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18879":
+        "id":18879,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -989,7 +1259,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18923":
+        "id":18923,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -1085,7 +1356,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18928":
+        "id":18928,
+        "info":
         {
             "age": 40,
             "birth": {
@@ -1181,7 +1453,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18966":
+        "id":18966,
+        "info":
         {
             "age": 41,
             "birth": {
@@ -1277,7 +1550,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18982":
+        "id":18982,
+        "info":
         {
             "age": 38,
             "birth": {
@@ -1373,7 +1647,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18988":
+        "id":18988,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -1469,7 +1744,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19031":
+        "id":19031,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -1565,7 +1841,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19054":
+        "id":19054,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -1661,7 +1938,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19747":
+        "id":19747,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -1757,7 +2035,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "81993":
+        "id":81993,
+        "info":
         {
             "age": 38,
             "birth": {
@@ -1853,7 +2132,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "82983":
+        "id":82983,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -1949,7 +2229,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "83132":
+        "id":83132,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -2045,7 +2326,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "114":
+        "id":114,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -2141,7 +2423,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "642":
+        "id":642,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -2237,7 +2520,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "893":
+        "id":893,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -2333,7 +2617,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1436":
+        "id":1436,
+        "info":
         {
             "age": 40,
             "birth": {
@@ -2429,7 +2714,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1443":
+        "id":1443,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -2525,7 +2811,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1444":
+        "id":1444,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -2621,7 +2908,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2795":
+        "id":2795,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -2717,7 +3005,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2921":
+        "id":2921,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -2813,7 +3102,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18775":
+        "id":18775,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -2909,7 +3199,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18792":
+        "id":18792,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -3005,7 +3296,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18795":
+        "id":18795,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -3101,7 +3393,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18800":
+        "id":18800,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -3197,7 +3490,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18864":
+        "id":18864,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -3293,7 +3587,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18900":
+        "id":18900,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -3389,7 +3684,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18975":
+        "id":18975,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -3485,7 +3781,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18995":
+        "id":18995,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -3581,7 +3878,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19423":
+        "id":19423,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -3677,7 +3975,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "50237":
+        "id":50237,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -3773,7 +4072,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "68125":
+        "id":68125,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -3869,7 +4169,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "87077":
+        "id":87077,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -3965,7 +4266,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "190":
+        "id":190,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -4061,7 +4363,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "894":
+        "id":894,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -4157,7 +4460,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1161":
+        "id":1161,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -4253,7 +4557,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1440":
+        "id":1440,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -4349,7 +4654,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1467":
+        "id":1467,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -4445,7 +4751,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1468":
+        "id":1468,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -4541,7 +4848,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18746":
+        "id":18746,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -4637,7 +4945,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18871":
+        "id":18871,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -4733,7 +5042,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18913":
+        "id":18913,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -4829,7 +5139,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18939":
+        "id":18939,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -4925,7 +5236,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18950":
+        "id":18950,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -5021,7 +5333,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18951":
+        "id":18951,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -5117,7 +5430,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18971":
+        "id":18971,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -5213,7 +5527,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19016":
+        "id":19016,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -5383,7 +5698,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19029":
+        "id":19029,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -5479,7 +5795,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19179":
+        "id":19179,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -5575,7 +5892,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19550":
+        "id":19550,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -5671,7 +5989,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19599":
+        "id":19599,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -5767,7 +6086,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19959":
+        "id":19959,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -5863,7 +6183,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "20008":
+        "id":20008,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -5959,7 +6280,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1446":
+        "id":1446,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -6055,7 +6377,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2287":
+        "id":2287,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -6151,7 +6474,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2289":
+        "id":2289,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -6247,7 +6571,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2292":
+        "id":2292,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -6343,7 +6668,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2933":
+        "id":2933,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -6439,7 +6765,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18747":
+        "id":18747,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -6535,7 +6862,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18839":
+        "id":18839,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -6631,7 +6959,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18954":
+        "id":18954,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -6727,7 +7056,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18955":
+        "id":18955,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -6897,7 +7227,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18964":
+        "id":18964,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -6993,7 +7324,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18980":
+        "id":18980,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -7089,7 +7421,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18981":
+        "id":18981,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -7185,7 +7518,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18986":
+        "id":18986,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -7281,7 +7615,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18994":
+        "id":18994,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -7377,7 +7712,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19012":
+        "id":19012,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -7473,7 +7809,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19044":
+        "id":19044,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -7569,7 +7906,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19045":
+        "id":19045,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -7665,7 +8003,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19052":
+        "id":19052,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -7835,7 +8174,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19059":
+        "id":19059,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -7931,7 +8271,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19177":
+        "id":19177,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -8027,7 +8368,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "630":
+        "id":630,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -8123,7 +8465,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2288":
+        "id":2288,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -8219,7 +8562,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2298":
+        "id":2298,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -8315,7 +8659,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2484":
+        "id":2484,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -8411,7 +8756,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2928":
+        "id":2928,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -8507,7 +8853,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18760":
+        "id":18760,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -8603,7 +8950,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18781":
+        "id":18781,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -8699,7 +9047,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18806":
+        "id":18806,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -8795,7 +9144,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18835":
+        "id":18835,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -8891,7 +9241,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18840":
+        "id":18840,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -8987,7 +9338,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18843":
+        "id":18843,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -9083,7 +9435,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18844":
+        "id":18844,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -9179,7 +9532,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18847":
+        "id":18847,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -9275,7 +9629,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18849":
+        "id":18849,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -9371,7 +9726,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18852":
+        "id":18852,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -9467,7 +9823,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18853":
+        "id":18853,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -9563,7 +9920,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18858":
+        "id":18858,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -9659,7 +10017,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18862":
+        "id":18862,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -9829,7 +10188,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18902":
+        "id":18902,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -9925,7 +10285,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19150":
+        "id":19150,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -10021,7 +10382,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "171":
+        "id":171,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -10117,7 +10479,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "172":
+        "id":172,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -10213,7 +10576,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "622":
+        "id":622,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -10309,7 +10673,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "623":
+        "id":623,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -10405,7 +10770,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "635":
+        "id":635,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -10501,7 +10867,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "640":
+        "id":640,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -10597,7 +10964,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2275":
+        "id":2275,
+        "info":
         {
             "age": 41,
             "birth": {
@@ -10693,7 +11061,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3398":
+        "id":3398,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -10789,7 +11158,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18762":
+        "id":18762,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -10885,7 +11255,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18766":
+        "id":18766,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -10981,7 +11352,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18768":
+        "id":18768,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -11077,7 +11449,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18769":
+        "id":18769,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -11173,7 +11546,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18805":
+        "id":18805,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -11269,7 +11643,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18854":
+        "id":18854,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -11365,7 +11740,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18932":
+        "id":18932,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -11461,7 +11837,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18935":
+        "id":18935,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -11557,7 +11934,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18940":
+        "id":18940,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -11653,7 +12031,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18942":
+        "id":18942,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -11749,7 +12128,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18949":
+        "id":18949,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -11845,7 +12225,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18956":
+        "id":18956,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -11941,7 +12322,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "284":
+        "id":284,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -12037,7 +12419,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "286":
+        "id":286,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -12133,7 +12516,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "292":
+        "id":292,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -12229,7 +12613,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "293":
+        "id":293,
+        "info":
         {
             "age": 21,
             "birth": {
@@ -12325,7 +12710,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "296":
+        "id":296,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -12421,7 +12807,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "297":
+        "id":297,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -12517,7 +12904,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "302":
+        "id":302,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -12613,7 +13001,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "882":
+        "id":882,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -12709,7 +13098,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "883":
+        "id":883,
+        "info":
         {
             "age": 39,
             "birth": {
@@ -12805,7 +13195,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "895":
+        "id":895,
+        "info":
         {
             "age": 21,
             "birth": {
@@ -12901,7 +13292,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1972":
+        "id":1972,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -12997,7 +13389,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2931":
+        "id":2931,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -13093,7 +13486,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18812":
+        "id":18812,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -13189,7 +13583,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18828":
+        "id":18828,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -13285,7 +13680,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18832":
+        "id":18832,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -13381,7 +13777,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18863":
+        "id":18863,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -13477,7 +13874,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18884":
+        "id":18884,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -13573,7 +13971,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19035":
+        "id":19035,
+        "info":
         {
             "age": 19,
             "birth": {
@@ -13669,7 +14068,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19955":
+        "id":19955,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -13765,7 +14165,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "73822":
+        "id":73822,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -13861,7 +14262,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "885":
+        "id":885,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -13957,7 +14359,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "888":
+        "id":888,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -14053,7 +14456,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "889":
+        "id":889,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -14149,7 +14553,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "891":
+        "id":891,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -14245,7 +14650,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "897":
+        "id":897,
+        "info":
         {
             "age": 21,
             "birth": {
@@ -14341,7 +14747,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "900":
+        "id":900,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -14437,7 +14844,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "901":
+        "id":901,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -14533,7 +14941,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "902":
+        "id":902,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -14629,7 +15038,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "909":
+        "id":909,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -14725,7 +15135,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18001":
+        "id":18001,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -14821,7 +15232,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18759":
+        "id":18759,
+        "info":
         {
             "age": 40,
             "birth": {
@@ -14917,7 +15329,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18807":
+        "id":18807,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -15013,7 +15426,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18846":
+        "id":18846,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -15109,7 +15523,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18920":
+        "id":18920,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -15205,7 +15620,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19010":
+        "id":19010,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -15301,7 +15717,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19046":
+        "id":19046,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -15397,7 +15814,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19048":
+        "id":19048,
+        "info":
         {
             "age": 21,
             "birth": {
@@ -15493,7 +15911,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19049":
+        "id":19049,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -15589,7 +16008,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19060":
+        "id":19060,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -15685,7 +16105,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "30800":
+        "id":30800,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -15781,7 +16202,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "295":
+        "id":295,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -15877,7 +16299,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1469":
+        "id":1469,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -15973,7 +16396,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2281":
+        "id":2281,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -16069,7 +16493,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2490":
+        "id":2490,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -16165,7 +16590,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18737":
+        "id":18737,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -16261,7 +16687,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18740":
+        "id":18740,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -16431,7 +16858,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18744":
+        "id":18744,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -16527,7 +16955,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18869":
+        "id":18869,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -16623,7 +17052,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18870":
+        "id":18870,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -16719,7 +17149,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18872":
+        "id":18872,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -16815,7 +17246,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18878":
+        "id":18878,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -16911,7 +17343,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18889":
+        "id":18889,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -17007,7 +17440,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18921":
+        "id":18921,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -17103,7 +17537,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18933":
+        "id":18933,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -17199,7 +17634,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18960":
+        "id":18960,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -17295,7 +17731,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18963":
+        "id":18963,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -17391,7 +17828,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18970":
+        "id":18970,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -17487,7 +17925,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18987":
+        "id":18987,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -17583,7 +18022,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19039":
+        "id":19039,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -17679,7 +18119,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19100":
+        "id":19100,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -17775,7 +18216,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "158":
+        "id":158,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -17871,7 +18313,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2790":
+        "id":2790,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -17967,7 +18410,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2936":
+        "id":2936,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -18063,7 +18507,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18736":
+        "id":18736,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -18159,7 +18604,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18883":
+        "id":18883,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -18255,7 +18701,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18912":
+        "id":18912,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -18351,7 +18798,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18915":
+        "id":18915,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -18447,7 +18895,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18916":
+        "id":18916,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -18543,7 +18992,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18917":
+        "id":18917,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -18639,7 +19089,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18918":
+        "id":18918,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -18735,7 +19186,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18922":
+        "id":18922,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -18831,7 +19283,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18925":
+        "id":18925,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -18927,7 +19380,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18926":
+        "id":18926,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -19023,7 +19477,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18927":
+        "id":18927,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -19119,7 +19574,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18929":
+        "id":18929,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -19215,7 +19671,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18977":
+        "id":18977,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -19311,7 +19768,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19011":
+        "id":19011,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -19407,7 +19865,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19043":
+        "id":19043,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -19503,7 +19962,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19107":
+        "id":19107,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -19599,7 +20059,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "82100":
+        "id":82100,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -19695,7 +20156,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "167":
+        "id":167,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -19791,7 +20253,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2860":
+        "id":2860,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -19887,7 +20350,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18791":
+        "id":18791,
+        "info":
         {
             "age": 39,
             "birth": {
@@ -19983,7 +20447,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18793":
+        "id":18793,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -20079,7 +20544,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18794":
+        "id":18794,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -20175,7 +20641,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18797":
+        "id":18797,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -20271,7 +20738,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18804":
+        "id":18804,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -20367,7 +20835,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18821":
+        "id":18821,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -20463,7 +20932,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18831":
+        "id":18831,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -20559,7 +21029,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18874":
+        "id":18874,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -20655,7 +21126,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18958":
+        "id":18958,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -20751,7 +21223,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18972":
+        "id":18972,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -20847,7 +21320,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19004":
+        "id":19004,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -20943,7 +21417,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19015":
+        "id":19015,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -21039,7 +21514,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19020":
+        "id":19020,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -21135,7 +21611,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19023":
+        "id":19023,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -21231,7 +21708,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19025":
+        "id":19025,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -21327,7 +21805,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19055":
+        "id":19055,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -21423,7 +21902,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19208":
+        "id":19208,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -21519,7 +21999,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "44775":
+        "id":44775,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -21615,7 +22096,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "179":
+        "id":179,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -21711,7 +22193,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1463":
+        "id":1463,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -21807,7 +22290,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2727":
+        "id":2727,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -21903,7 +22387,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2731":
+        "id":2731,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -21999,7 +22484,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2939":
+        "id":2939,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -22095,7 +22581,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18885":
+        "id":18885,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -22191,7 +22678,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18886":
+        "id":18886,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -22287,7 +22775,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18891":
+        "id":18891,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -22383,7 +22872,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18892":
+        "id":18892,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -22479,7 +22969,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18893":
+        "id":18893,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -22575,7 +23066,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18894":
+        "id":18894,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -22671,7 +23163,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18899":
+        "id":18899,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -22767,7 +23260,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18901":
+        "id":18901,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -22863,7 +23357,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18903":
+        "id":18903,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -22959,7 +23454,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18904":
+        "id":18904,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -23055,7 +23551,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18941":
+        "id":18941,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -23151,7 +23648,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18961":
+        "id":18961,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -23247,7 +23745,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19163":
+        "id":19163,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -23343,7 +23842,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "68126":
+        "id":68126,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -23439,7 +23939,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "68127":
+        "id":68127,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -23535,7 +24036,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "165":
+        "id":165,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -23631,7 +24133,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "173":
+        "id":173,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -23727,7 +24230,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "906":
+        "id":906,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -23823,7 +24327,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "17794":
+        "id":17794,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -23919,7 +24424,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18738":
+        "id":18738,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -24015,7 +24521,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18808":
+        "id":18808,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -24111,7 +24618,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18810":
+        "id":18810,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -24207,7 +24715,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18841":
+        "id":18841,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -24303,7 +24812,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18938":
+        "id":18938,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -24399,7 +24909,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18952":
+        "id":18952,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -24495,7 +25006,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18976":
+        "id":18976,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -24591,7 +25103,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18985":
+        "id":18985,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -24687,7 +25200,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18990":
+        "id":18990,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -24783,7 +25297,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18992":
+        "id":18992,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -24879,7 +25394,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19002":
+        "id":19002,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -24975,7 +25491,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19003":
+        "id":19003,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -25071,7 +25588,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19009":
+        "id":19009,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -25241,7 +25759,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19024":
+        "id":19024,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -25337,7 +25856,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19038":
+        "id":19038,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -25433,7 +25953,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19159":
+        "id":19159,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -25529,7 +26050,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "177":
+        "id":177,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -25625,7 +26147,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "618":
+        "id":618,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -25721,7 +26244,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "884":
+        "id":884,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -25817,7 +26341,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "887":
+        "id":887,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -25913,7 +26438,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "910":
+        "id":910,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -26009,7 +26535,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2295":
+        "id":2295,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -26105,7 +26632,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2475":
+        "id":2475,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -26201,7 +26729,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2777":
+        "id":2777,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -26297,7 +26826,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18743":
+        "id":18743,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -26393,7 +26923,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18754":
+        "id":18754,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -26489,7 +27020,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18820":
+        "id":18820,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -26585,7 +27117,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18857":
+        "id":18857,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -26681,7 +27214,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18882":
+        "id":18882,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -26777,7 +27311,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18919":
+        "id":18919,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -26873,7 +27408,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19021":
+        "id":19021,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -26969,7 +27505,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19037":
+        "id":19037,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -27065,7 +27602,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19053":
+        "id":19053,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -27161,7 +27699,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19058":
+        "id":19058,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -27257,7 +27796,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19513":
+        "id":19513,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -27353,7 +27893,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19728":
+        "id":19728,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -27449,7 +27990,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1347":
+        "id":1347,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -27545,7 +28087,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1758":
+        "id":1758,
+        "info":
         {
             "age": 40,
             "birth": {
@@ -27641,7 +28184,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2299":
+        "id":2299,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -27737,7 +28281,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2412":
+        "id":2412,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -27833,7 +28378,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3423":
+        "id":3423,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -27929,7 +28475,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "17711":
+        "id":17711,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -28025,7 +28572,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18756":
+        "id":18756,
+        "info":
         {
             "age": 40,
             "birth": {
@@ -28121,7 +28669,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18796":
+        "id":18796,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -28217,7 +28766,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18822":
+        "id":18822,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -28313,7 +28863,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18868":
+        "id":18868,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -28409,7 +28960,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18877":
+        "id":18877,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -28505,7 +29057,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18880":
+        "id":18880,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -28601,7 +29154,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18890":
+        "id":18890,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -28697,7 +29251,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18937":
+        "id":18937,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -28793,7 +29348,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19008":
+        "id":19008,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -28889,7 +29445,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19018":
+        "id":19018,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -28985,7 +29542,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19040":
+        "id":19040,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -29081,7 +29639,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19051":
+        "id":19051,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -29177,7 +29736,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "30462":
+        "id":30462,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -29273,7 +29833,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "68124":
+        "id":68124,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -29369,7 +29930,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "113":
+        "id":113,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -29465,7 +30027,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "287":
+        "id":287,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -29561,7 +30124,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "298":
+        "id":298,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -29657,7 +30221,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2792":
+        "id":2792,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -29753,7 +30318,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2997":
+        "id":2997,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -29849,7 +30415,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "17585":
+        "id":17585,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -29945,7 +30512,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18745":
+        "id":18745,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -30041,7 +30609,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18813":
+        "id":18813,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -30137,7 +30706,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18814":
+        "id":18814,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -30233,7 +30803,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18815":
+        "id":18815,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -30329,7 +30900,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18816":
+        "id":18816,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -30425,7 +30997,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18817":
+        "id":18817,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -30521,7 +31094,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18819":
+        "id":18819,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -30617,7 +31191,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18823":
+        "id":18823,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -30713,7 +31288,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18826":
+        "id":18826,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -30809,7 +31385,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18838":
+        "id":18838,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -30905,7 +31482,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18848":
+        "id":18848,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -31001,7 +31579,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18996":
+        "id":18996,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -31171,7 +31750,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19514":
+        "id":19514,
+        "info":
         {
             "age": 38,
             "birth": {
@@ -31267,7 +31847,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "30816":
+        "id":30816,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -31363,7 +31944,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "308":
+        "id":308,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -31459,7 +32041,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "614":
+        "id":614,
+        "info":
         {
             "age": 39,
             "birth": {
@@ -31555,7 +32138,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "634":
+        "id":634,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -31651,7 +32235,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1439":
+        "id":1439,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -31747,7 +32332,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1447":
+        "id":1447,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -31843,7 +32429,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18753":
+        "id":18753,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -31939,7 +32526,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18798":
+        "id":18798,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -32035,7 +32623,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18833":
+        "id":18833,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -32205,7 +32794,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18845":
+        "id":18845,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -32301,7 +32891,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18867":
+        "id":18867,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -32397,7 +32988,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18876":
+        "id":18876,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -32493,7 +33085,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18965":
+        "id":18965,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -32589,7 +33182,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18978":
+        "id":18978,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -32685,7 +33279,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18998":
+        "id":18998,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -32781,7 +33376,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19000":
+        "id":19000,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -32877,7 +33473,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19014":
+        "id":19014,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -32973,7 +33570,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19019":
+        "id":19019,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -33069,7 +33667,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19034":
+        "id":19034,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -33165,7 +33764,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19042":
+        "id":19042,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -33261,7 +33861,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "50101":
+        "id":50101,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -33357,7 +33958,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "108":
+        "id":108,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -33453,7 +34055,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "176":
+        "id":176,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -33549,7 +34152,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "288":
+        "id":288,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -33645,7 +34249,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "300":
+        "id":300,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -33741,7 +34346,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "896":
+        "id":896,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -33837,7 +34443,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "898":
+        "id":898,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -33933,7 +34540,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "908":
+        "id":908,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -34029,7 +34637,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1461":
+        "id":1461,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -34125,7 +34734,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1465":
+        "id":1465,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -34221,7 +34831,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1699":
+        "id":1699,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -34317,7 +34928,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2284":
+        "id":2284,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -34413,7 +35025,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18764":
+        "id":18764,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -34509,7 +35122,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18802":
+        "id":18802,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -34605,7 +35219,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18842":
+        "id":18842,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -34701,7 +35316,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18856":
+        "id":18856,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -34797,7 +35413,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18895":
+        "id":18895,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -34893,7 +35510,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18907":
+        "id":18907,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -34989,7 +35607,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19006":
+        "id":19006,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -35085,7 +35704,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19057":
+        "id":19057,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -35181,7 +35801,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "47324":
+        "id":47324,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -35277,7 +35898,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "161":
+        "id":161,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -35373,7 +35995,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "178":
+        "id":178,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -35469,7 +36092,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "180":
+        "id":180,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -35565,7 +36189,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "182":
+        "id":182,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -35661,7 +36286,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "625":
+        "id":625,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -35757,7 +36383,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "727":
+        "id":727,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -35853,7 +36480,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "892":
+        "id":892,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -35949,7 +36577,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1441":
+        "id":1441,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -36045,7 +36674,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1448":
+        "id":1448,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -36141,7 +36771,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1456":
+        "id":1456,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -36237,7 +36868,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1457":
+        "id":1457,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -36333,7 +36965,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18761":
+        "id":18761,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -36429,7 +37062,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18777":
+        "id":18777,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -36525,7 +37159,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18784":
+        "id":18784,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -36621,7 +37256,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18859":
+        "id":18859,
+        "info":
         {
             "age": 42,
             "birth": {
@@ -36717,7 +37353,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18936":
+        "id":18936,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -36813,7 +37450,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18999":
+        "id":18999,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -36909,7 +37547,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19032":
+        "id":19032,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -37005,7 +37644,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19056":
+        "id":19056,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -37101,7 +37741,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19307":
+        "id":19307,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -37197,7 +37838,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "306":
+        "id":306,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -37293,7 +37935,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1452":
+        "id":1452,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -37389,7 +38032,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1458":
+        "id":1458,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -37485,7 +38129,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2778":
+        "id":2778,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -37581,7 +38226,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3406":
+        "id":3406,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -37677,7 +38323,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3421":
+        "id":3421,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -37773,7 +38420,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3428":
+        "id":3428,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -37869,7 +38517,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18763":
+        "id":18763,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -37965,7 +38614,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18778":
+        "id":18778,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -38061,7 +38711,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18779":
+        "id":18779,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -38157,7 +38808,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18786":
+        "id":18786,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -38253,7 +38905,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18788":
+        "id":18788,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -38349,7 +39002,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18829":
+        "id":18829,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -38445,7 +39099,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18851":
+        "id":18851,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -38541,7 +39196,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18906":
+        "id":18906,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -38637,7 +39293,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18908":
+        "id":18908,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -38733,7 +39390,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18984":
+        "id":18984,
+        "info":
         {
             "age": 39,
             "birth": {
@@ -38829,7 +39487,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19022":
+        "id":19022,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -38925,7 +39584,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "25454":
+        "id":25454,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -39021,7 +39681,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "47430":
+        "id":47430,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -39117,7 +39778,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "185":
+        "id":185,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -39213,7 +39875,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "886":
+        "id":886,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -39309,7 +39972,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "904":
+        "id":904,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -39405,7 +40069,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1450":
+        "id":1450,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -39501,7 +40166,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2473":
+        "id":2473,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -39597,7 +40263,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2674":
+        "id":2674,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -39693,7 +40360,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2676":
+        "id":2676,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -39789,7 +40457,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2677":
+        "id":2677,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -39885,7 +40554,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2678":
+        "id":2678,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -39981,7 +40651,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2726":
+        "id":2726,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -40077,7 +40748,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "12753":
+        "id":12753,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -40173,7 +40845,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18787":
+        "id":18787,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -40269,7 +40942,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18898":
+        "id":18898,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -40365,7 +41039,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18905":
+        "id":18905,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -40461,7 +41136,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18947":
+        "id":18947,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -40557,7 +41233,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18997":
+        "id":18997,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -40653,7 +41330,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19036":
+        "id":19036,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -40749,7 +41427,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19047":
+        "id":19047,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -40845,7 +41524,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19246":
+        "id":19246,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -40941,7 +41621,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19917":
+        "id":19917,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -41037,7 +41718,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "175":
+        "id":175,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -41133,7 +41815,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "636":
+        "id":636,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -41229,7 +41912,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "641":
+        "id":641,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -41325,7 +42009,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1438":
+        "id":1438,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -41421,7 +42106,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2273":
+        "id":2273,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -41517,7 +42203,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2286":
+        "id":2286,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -41613,7 +42300,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2934":
+        "id":2934,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -41709,7 +42397,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "12709":
+        "id":12709,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -41805,7 +42494,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18742":
+        "id":18742,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -41901,7 +42591,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18751":
+        "id":18751,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -41997,7 +42688,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18752":
+        "id":18752,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -42093,7 +42785,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18765":
+        "id":18765,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -42189,7 +42882,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18771":
+        "id":18771,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -42285,7 +42979,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18803":
+        "id":18803,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -42381,7 +43076,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18809":
+        "id":18809,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -42477,7 +43173,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18824":
+        "id":18824,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -42573,7 +43270,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18834":
+        "id":18834,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -42669,7 +43367,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18896":
+        "id":18896,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -42765,7 +43464,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18914":
+        "id":18914,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -42861,7 +43561,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18973":
+        "id":18973,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -42957,7 +43658,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "168":
+        "id":168,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -43053,7 +43755,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "181":
+        "id":181,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -43149,7 +43852,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "186":
+        "id":186,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -43245,7 +43949,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "304":
+        "id":304,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -43341,7 +44046,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "305":
+        "id":305,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -43437,7 +44143,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "890":
+        "id":890,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -43533,7 +44240,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1635":
+        "id":1635,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -43629,7 +44337,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2990":
+        "id":2990,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -43725,7 +44434,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2991":
+        "id":2991,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -43821,7 +44531,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "16821":
+        "id":16821,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -43917,7 +44628,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18780":
+        "id":18780,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -44013,7 +44725,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18785":
+        "id":18785,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -44109,7 +44822,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18873":
+        "id":18873,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -44205,7 +44919,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18930":
+        "id":18930,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -44301,7 +45016,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18948":
+        "id":18948,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -44397,7 +45113,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18979":
+        "id":18979,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -44493,7 +45210,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18993":
+        "id":18993,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -44589,7 +45307,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19005":
+        "id":19005,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -44685,7 +45404,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19007":
+        "id":19007,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -44781,7 +45501,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19028":
+        "id":19028,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -44877,7 +45598,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "289":
+        "id":289,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -44973,7 +45695,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "294":
+        "id":294,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -45069,7 +45792,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "903":
+        "id":903,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -45165,7 +45889,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1442":
+        "id":1442,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -45261,7 +45986,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1445":
+        "id":1445,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -45357,7 +46083,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1749":
+        "id":1749,
+        "info":
         {
             "age": 37,
             "birth": {
@@ -45453,7 +46180,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2294":
+        "id":2294,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -45549,7 +46277,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2297":
+        "id":2297,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -45645,7 +46374,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2825":
+        "id":2825,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -45741,7 +46471,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2999":
+        "id":2999,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -45837,7 +46568,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3125":
+        "id":3125,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -45933,7 +46665,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "8492":
+        "id":8492,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -46029,7 +46762,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18772":
+        "id":18772,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -46125,7 +46859,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18773":
+        "id":18773,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -46221,7 +46956,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18875":
+        "id":18875,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -46317,7 +47053,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18881":
+        "id":18881,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -46413,7 +47150,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18945":
+        "id":18945,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -46509,7 +47247,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18946":
+        "id":18946,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -46605,7 +47344,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18967":
+        "id":18967,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -46701,7 +47441,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "51106":
+        "id":51106,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -46797,7 +47538,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "159":
+        "id":159,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -46893,7 +47635,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "162":
+        "id":162,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -46989,7 +47732,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "163":
+        "id":163,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -47085,7 +47829,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "282":
+        "id":282,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -47181,7 +47926,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1454":
+        "id":1454,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -47277,7 +48023,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2290":
+        "id":2290,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -47373,7 +48120,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2291":
+        "id":2291,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -47469,7 +48217,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2724":
+        "id":2724,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -47565,7 +48314,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2886":
+        "id":2886,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -47661,7 +48411,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3243":
+        "id":3243,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -47757,7 +48508,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3247":
+        "id":3247,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -47853,7 +48605,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18739":
+        "id":18739,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -47949,7 +48702,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18758":
+        "id":18758,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -48045,7 +48799,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18860":
+        "id":18860,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -48141,7 +48896,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18924":
+        "id":18924,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -48237,7 +48993,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18957":
+        "id":18957,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -48333,7 +49090,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18962":
+        "id":18962,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -48429,7 +49187,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18974":
+        "id":18974,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -48525,7 +49284,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19017":
+        "id":19017,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -48621,7 +49381,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19041":
+        "id":19041,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -48717,7 +49478,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "169":
+        "id":169,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -48813,7 +49575,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "170":
+        "id":170,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -48909,7 +49672,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "184":
+        "id":184,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -49005,7 +49769,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "283":
+        "id":283,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -49101,7 +49866,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "626":
+        "id":626,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -49197,7 +49963,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "627":
+        "id":627,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -49293,7 +50060,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "629":
+        "id":629,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -49389,7 +50157,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "631":
+        "id":631,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -49485,7 +50254,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "907":
+        "id":907,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -49581,7 +50351,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2296":
+        "id":2296,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -49677,7 +50448,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2922":
+        "id":2922,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -49773,7 +50545,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2926":
+        "id":2926,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -49869,7 +50642,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2927":
+        "id":2927,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -49965,7 +50739,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2932":
+        "id":2932,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -50061,7 +50836,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2935":
+        "id":2935,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -50157,7 +50933,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2937":
+        "id":2937,
+        "info":
         {
             "age": 23,
             "birth": {
@@ -50253,7 +51030,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2938":
+        "id":2938,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -50349,7 +51127,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18741":
+        "id":18741,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -50445,7 +51224,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19194":
+        "id":19194,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -50541,7 +51321,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "67971":
+        "id":67971,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -50637,7 +51418,8 @@ db.jogador.insertMany([
         ]
     }, 
     {
-        "59":
+        "id":59,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -50733,7 +51515,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "174":
+        "id":174,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -50829,7 +51612,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "183":
+        "id":183,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -50925,7 +51709,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "290":
+        "id":290,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -51021,7 +51806,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "307":
+        "id":307,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -51117,7 +51903,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "633":
+        "id":633,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -51213,7 +52000,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "644":
+        "id":644,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -51309,7 +52097,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "645":
+        "id":645,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -51405,7 +52194,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1460":
+        "id":1460,
+        "info":
         {
             "age": 21,
             "birth": {
@@ -51501,7 +52291,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1464":
+        "id":1464,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -51597,7 +52388,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2278":
+        "id":2278,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -51693,7 +52485,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2280":
+        "id":2280,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -51789,7 +52582,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2282":
+        "id":2282,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -51885,7 +52679,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2283":
+        "id":2283,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -51981,7 +52776,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2285":
+        "id":2285,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -52077,7 +52873,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2728":
+        "id":2728,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -52173,7 +52970,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2734":
+        "id":2734,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -52269,7 +53067,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2806":
+        "id":2806,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -52365,7 +53164,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18861":
+        "id":18861,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -52461,7 +53261,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18943":
+        "id":18943,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -52557,7 +53358,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "164":
+        "id":164,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -52653,7 +53455,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "899":
+        "id":899,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -52749,7 +53552,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1459":
+        "id":1459,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -52845,7 +53649,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2279":
+        "id":2279,
+        "info":
         {
             "age": 22,
             "birth": {
@@ -52941,7 +53746,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2461":
+        "id":2461,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -53037,7 +53843,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2716":
+        "id":2716,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -53133,7 +53940,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2735":
+        "id":2735,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -53229,7 +54037,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2741":
+        "id":2741,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -53325,7 +54134,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2887":
+        "id":2887,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -53421,7 +54231,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18146":
+        "id":18146,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -53517,7 +54328,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18776":
+        "id":18776,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -53613,7 +54425,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18799":
+        "id":18799,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -53709,7 +54522,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18811":
+        "id":18811,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -53805,7 +54619,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18830":
+        "id":18830,
+        "info":
         {
             "age": 33,
             "birth": {
@@ -53901,7 +54716,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18836":
+        "id":18836,
+        "info":
         {
             "age": 35,
             "birth": {
@@ -53997,7 +54813,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18866":
+        "id":18866,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -54093,7 +54910,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18897":
+        "id":18897,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -54189,7 +55007,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18944":
+        "id":18944,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -54285,7 +55104,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19026":
+        "id":19026,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -54381,7 +55201,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19050":
+        "id":19050,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -54477,7 +55298,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "166":
+        "id":166,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -54573,7 +55395,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "280":
+        "id":280,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -54669,7 +55492,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "299":
+        "id":299,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -54765,7 +55589,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "616":
+        "id":616,
+        "info":
         {
             "age": 24,
             "birth": {
@@ -54861,7 +55686,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "617":
+        "id":617,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -54957,7 +55783,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "624":
+        "id":624,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -55053,7 +55880,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "643":
+        "id":643,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -55149,7 +55977,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "905":
+        "id":905,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -55245,7 +56074,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1455":
+        "id":1455,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -55341,7 +56171,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "1462":
+        "id":1462,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -55437,7 +56268,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2413":
+        "id":2413,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -55533,7 +56365,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2500":
+        "id":2500,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -55629,7 +56462,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2507":
+        "id":2507,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -55725,7 +56559,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2700":
+        "id":2700,
+        "info":
         {
             "age": 29,
             "birth": {
@@ -55821,7 +56656,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "2767":
+        "id":2767,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -55917,7 +56753,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18767":
+        "id":18767,
+        "info":
         {
             "age": 25,
             "birth": {
@@ -56013,7 +56850,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18931":
+        "id":18931,
+        "info":
         {
             "age": 31,
             "birth": {
@@ -56109,7 +56947,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18991":
+        "id":18991,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -56205,7 +57044,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19386":
+        "id":19386,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -56301,7 +57141,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "49923":
+        "id":49923,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -56397,7 +57238,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "3395":
+        "id":3395,
+        "info":
         {
             "age": 28,
             "birth": {
@@ -56493,7 +57335,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18827":
+        "id":18827,
+        "info":
         {
             "age": 36,
             "birth": {
@@ -56589,7 +57432,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18968":
+        "id":18968,
+        "info":
         {
             "age": 26,
             "birth": {
@@ -56685,7 +57529,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "18983":
+        "id":18983,
+        "info":
         {
             "age": 32,
             "birth": {
@@ -56781,7 +57626,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19027":
+        "id":19027,
+        "info":
         {
             "age": 30,
             "birth": {
@@ -56877,7 +57723,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "19033":
+        "id":19033,
+        "info":
         {
             "age": 34,
             "birth": {
@@ -56973,7 +57820,8 @@ db.jogador.insertMany([
         ]
     },
     {
-        "38700":
+        "id":38700,
+        "info":
         {
             "age": 27,
             "birth": {
@@ -57068,8 +57916,8 @@ db.jogador.insertMany([
             }
         ]
     }
-]
-);
+]);
+
 // ---------------------------------------------------------------------------------------------------
 db.jogo.insertMany([
     {
@@ -66201,7 +67049,11 @@ db.usuario.insertMany([
       "privacidade_do_perfil": true,
       "cpf": "545.269.123-87",
       "nome": "John Doe",
-      "email": "john.doe@email.com"
+      "email": "john.doe@email.com",
+      "lucro": 12.5,
+      "apostasVencedoras": 2,
+      "apostasPerdedoras": 0,
+      "apostasNoMes": 1
     },
     {
       "id": 2,
@@ -66209,7 +67061,11 @@ db.usuario.insertMany([
       "privacidade_do_perfil": false,
       "cpf": "324.624.233-92",
       "nome": "Phillipe Rogers",
-      "email": "phillipe.rogers@email.com"
+      "email": "phillipe.rogers@email.com",
+      "lucro": 125,
+      "apostasVencedoras": 10,
+      "apostasPerdedoras": 4,
+      "apostasNoMes": 8
     },
     {
       "id": 3,
@@ -66217,7 +67073,27 @@ db.usuario.insertMany([
       "privacidade_do_perfil": false,
       "cpf": "343.424.512-12",
       "nome": "Mathew Shawman",
-      "email": "mathew.shawman@email.com"
+      "email": "mathew.shawman@email.com",
+      "lucro": -17,
+      "apostasVencedoras": 1,
+      "apostasPerdedoras": 3,
+      "apostasNoMes": 2
     }
-  ]);
+]);
 
+// Queries
+
+// Devolver todas as partidas com mais de 5 gols
+db.jogo.aggregate([{ $group : { _id: {matchId: "$id", awayTeam: "$info.awayTeam", homeTeam: "$info.homeTeam"}, golsPartida: { $max : {$sum: [{$toInt: "$info.goalsAwayTeam"},{$toInt: "$info.goalsHomeTeam"}]}}}}, {$sort: {golsPartida: -1}}, {$match: {golsPartida: {$gte: 5}}}]);
+
+// Devolver os 5 times com os melhores saldo de gols
+db.times.aggregate({ $group : { _id: "$name", gD: {$max: "$leagues.goalsDiff"}}}, {$sort: {gD:-1}}, {$limit: 5});
+
+// Devolver o usuário com maior lucro
+db.usuario.aggregate({ $group : { _id: "$nome", lucro: { $max : "$lucro" }}}, {$sort: {lucro:-1}}, {$limit: 1});
+
+// Devolver o usuário com mais apostas
+db.usuario.aggregate({ $group : { _id: "$nome", quantidadeApostas: { $max : {$sum: ["$apostasVencedoras", "$apostasPerdedoras"]}}}}, {$sort: {quantidadeApostas: -1}}, {$limit: 1});
+
+// Devolver jogador com mais cartões
+db.jogador.aggregate([{$unwind: "$statistics"},{$group: {_id: {id: "$id", firstName: "$info.firstname", lastName: "$info.lastname" }, cards: { $max : {$sum: ["$statistics.cards.red", "$statistics.cards.yellow", "$statistics.cards.yellowred"]}}}}, {$sort: {cards: -1}}, {$limit: 5}]);
