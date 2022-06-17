@@ -1,12 +1,13 @@
 import pg from 'pg'
 import fs from 'fs'
+import { exit } from 'process';
 
 const Tables = {
   jogador: {name: 'jogador', numOfFields: 8},
   time: {name: 'time', numOfFields: 3},
   jogo: {name: 'jogo', numOfFields: 6},
   usuario: {name: 'usuario', numOfFields: 6},
-  apostas: {name: 'apostas', numOfFields: 4},
+  apostas: {name: 'apostas', numOfFields: 6},
   deposito: {name: 'deposito', numOfFields: 3},
 }
 
@@ -46,18 +47,54 @@ async function insertRow(db, table, values, numOfValues) {
   for (let i = 1; i <= values.length; i++) {
     valueIndexes += i === 1 ? `$${i}` : `,$${i}`;
   }
-  console.log(`INSERT INTO ${table} VALUES (${valueIndexes})`);
-  const res = await db.query(`INSERT INTO ${table} VALUES (${valueIndexes})`, values);
-  console.log(res.rows[0]);  
+  try {
+    await db.query(`INSERT INTO ${table} VALUES (${valueIndexes})`, values);
+  } catch (e) {
+    if (e.code === '23505') {
+      console.log('Este Id já existe');
+      return Promise.resolve()
+    }
+  }
 }
 
-async function populate_postgres(allTeams, allPlayers, allFixtures, allUsers) {
+async function populate_postgres(allTeams, allPlayers, allFixtures, allUsers, allBets) {
   const db = await connect();
   
-  allTeams.forEach(team => insertRow(db, Tables.time.name, team, Tables.time.numOfFields));
-  allPlayers.forEach(player => insertRow(db, Tables.jogador.name, player, Tables.jogador.numOfFields));
-  allFixtures.forEach(fixture => insertRow(db, Tables.jogo.name, fixture, Tables.jogo.numOfFields));
-  allUsers.forEach(user => insertRow(db, Tables.usuario.name, user, Tables.usuario.numOfFields));
+  const allPromises = [];
+  allTeams.forEach(
+    team => 
+      allPromises.push(
+        insertRow(db, Tables.time.name, team, Tables.time.numOfFields)
+      )
+  );
+  allPlayers.forEach(
+    player => 
+      allPromises.push(
+        insertRow(db, Tables.jogador.name, player, Tables.jogador.numOfFields)
+      )
+  );
+  allFixtures.forEach(
+    fixture => 
+      allPromises.push(
+        insertRow(db, Tables.jogo.name, fixture, Tables.jogo.numOfFields)
+      )
+  );
+  allUsers.forEach(
+    user => 
+      allPromises.push(
+        insertRow(db, Tables.usuario.name, user, Tables.usuario.numOfFields)
+      )
+  );
+  allBets.forEach(
+    bet => 
+      allPromises.push(
+        insertRow(db, Tables.apostas.name, bet, Tables.apostas.numOfFields)
+      )
+  );
+
+  await Promise.all(allPromises);
+  db.end();
+  exit(0);
 }
 
 function parseJogadorData(allTeams) {
@@ -69,7 +106,6 @@ function parseJogadorData(allTeams) {
     const id = allData[i].id;
     const {name, birth, height, weight} = allData[i].info;
     const { team: playerTeam } = allData[i].statistics[0]
-    console.log(playerTeam.name);
     const desiredValues = [
       id, 
       name, 
@@ -140,12 +176,34 @@ function parseUserData() {
     allUsers.push(desiredValues);
   }
 
-  return allUsers
+  return allUsers;
+}
+
+function parseApostaData() {
+  const betData = fs.readFileSync('./processedData/betsId.json');
+  const allData = JSON.parse(betData);
+  const allBets = [];
+
+  for (let i = 0; i < allData.length; i++) {
+    const {id, valor, tipo, lucro_ou_perda, usuario, jogo} = allData[i];
+    const desiredValues = [
+      id,
+      valor, 
+      tipo, 
+      lucro_ou_perda,
+      usuario,
+      jogo
+    ];
+    allBets.push(desiredValues);
+  }
+
+  return allBets;
 }
 
 const allTeams = parseTimeData();
 const allPlayers = parseJogadorData(allTeams);
 const allFixtures = parseJogoData();
 const allUsers = parseUserData();
+const allBets = parseApostaData();
 
-populate_postgres(allTeams, allPlayers, allFixtures, allUsers);
+populate_postgres(allTeams, allPlayers, allFixtures, allUsers, allBets);

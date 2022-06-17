@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "valor": 250.0,
+    "tipo": "empate",
+    "lucro_ou_perda": "lucro",
+    "usuario": 1,
+    "jogo": 75,
+    "data": "2018-08-11T14:00:00+00:00"
+  },
+  {
+    "id": 2,
+    "valor": 50,
+    "tipo": "escalação",
+    "lucro_ou_perda": "perda",
+    "usuario": 1,
+    "jogo": 350,
+    "data": "2018-03-01T10:00:00+00:00"
+  },
+  {
+    "id": 3,
+    "valor": 34,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "lucro",
+    "usuario": 1,
+    "jogo": 377,
+    "data": "2019-03-26T22:00:00+00:00"
+  },
+  {
+    "id": 4,
+    "valor": 1300,
+    "tipo": "empate",
+    "lucro_ou_perda": "perda",
+    "usuario": 1,
+    "jogo": 80,
+    "data": "2018-08-17T13:00:00+00:00"
+  },
+  {
+    "id": 5,
+    "valor": 1500.4,
+    "tipo": "escalação",
+    "lucro_ou_perda": "lucro",
+    "usuario": 1,
+    "jogo": 259,
+    "data": "2018-12-28T23:00:00+00:00"
+  },
+  {
+    "id": 6,
+    "valor": 100,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "lucro",
+    "usuario": 2,
+    "jogo": 80,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 7,
+    "valor": 123,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "lucro",
+    "usuario": 2,
+    "jogo": 350,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 8,
+    "valor": 50,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "perda",
+    "usuario": 2,
+    "jogo": 75,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 9,
+    "valor": 49,
+    "tipo": "escalação",
+    "lucro_ou_perda": "lucro",
+    "usuario": 2,
+    "jogo": 99,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 10,
+    "valor": 1700,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "perda",
+    "usuario": 2,
+    "jogo": 416,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 11,
+    "valor": 25.0,
+    "tipo": "empate",
+    "lucro_ou_perda": "perda",
+    "usuario": 3,
+    "jogo": 324,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 12,
+    "valor": 53,
+    "tipo": "empate",
+    "lucro_ou_perda": "lucro",
+    "usuario": 3,
+    "jogo": 311,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 13,
+    "valor": 340,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "lucro",
+    "usuario": 3,
+    "jogo": 274,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 14,
+    "valor": 480,
+    "tipo": "escalação",
+    "lucro_ou_perda": "perda",
+    "usuario": 3,
+    "jogo": 259,
+    "data": "2018-09-01T14:00:00+00:00"
+  },
+  {
+    "id": 15,
+    "valor": 500,
+    "tipo": "time_vencedor",
+    "lucro_ou_perda": "lucro",
+    "usuario": 3,
+    "jogo": 75,
+    "data": "2018-09-01T14:00:00+00:00"
+  }
+]

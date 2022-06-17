@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Usuario (
   id integer NOT NULL PRIMARY KEY UNIQUE,
   carteira double precision NOT NULL,
   privacidade_do_perfil boolean NOT NULL,
-  cpf varchar(256) NOT NULL,
+  cpf varchar(256) NOT NULL UNIQUE,
   nome varchar(256) NOT NULL,
   email varchar(256) NOT NULL
 );
@@ -11,7 +11,18 @@ CREATE TABLE IF NOT EXISTS Apostas (
   id integer NOT NULL PRIMARY KEY UNIQUE,
   valor double precision NOT NULL,
   tipo varchar(256) NOT NULL,
-  lucro_ou_perda varchar(256) NOT NULL
+  lucro_ou_perda varchar(256) NOT NULL,
+  usuario integer NOT NULL,
+  jogo integer NOT NULL,
+  "data" timestamp NOT NULL CHECK("data" < SELECT data_horario FROM jogo j WHERE j.id = jogo),
+
+  CONSTRAINT fk_usuario
+      FOREIGN KEY(usuario) 
+	      REFERENCES Usuario(id),
+  CONSTRAINT fk_jogo
+    FOREIGN KEY(jogo) 
+      REFERENCES Jogo(id),
+  
 );
 
 CREATE TABLE IF NOT EXISTS Jogo (
