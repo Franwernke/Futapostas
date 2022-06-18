@@ -63,5 +63,10 @@ CREATE TABLE IF NOT EXISTS Jogador (
 
 CREATE TABLE IF NOT EXISTS Deposito (
   id integer NOT NULL PRIMARY KEY UNIQUE,
-  valor double precision
+  valor double precision,
+  usuario integer,
+
+  CONSTRAINT fk_usuario
+      FOREIGN KEY(usuario) 
+	      REFERENCES Usuario(id)
 );

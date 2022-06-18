@@ -1003,3 +1003,8 @@ INSERT INTO apostas(id,valor,tipo,lucro_ou_perda,usuario,jogo,data) VALUES (12,5
 INSERT INTO apostas(id,valor,tipo,lucro_ou_perda,usuario,jogo,data) VALUES (13,340,'time_vencedor','lucro',3,274,'2018-09-01T14:00:00+00:00');
 INSERT INTO apostas(id,valor,tipo,lucro_ou_perda,usuario,jogo,data) VALUES (14,480,'escalação','perda',3,259,'2018-09-01T14:00:00+00:00');
 INSERT INTO apostas(id,valor,tipo,lucro_ou_perda,usuario,jogo,data) VALUES (15,500,'time_vencedor','lucro',3,75,'2018-09-01T14:00:00+00:00');
+INSERT INTO deposito(id,valor,usuario) VALUES (1,1200,1);
+INSERT INTO deposito(id,valor,usuario) VALUES (2,200,2);
+INSERT INTO deposito(id,valor,usuario) VALUES (3,150,2);
+INSERT INTO deposito(id,valor,usuario) VALUES (4,25,3);
+INSERT INTO deposito(id,valor,usuario) VALUES (5,53,3);
