@@ -7,24 +7,6 @@ CREATE TABLE IF NOT EXISTS Usuario (
   email varchar(256) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Apostas (
-  id integer NOT NULL PRIMARY KEY UNIQUE,
-  valor double precision NOT NULL,
-  tipo varchar(256) NOT NULL,
-  lucro_ou_perda varchar(256) NOT NULL,
-  usuario integer NOT NULL,
-  jogo integer NOT NULL,
-  "data" timestamp NOT NULL CHECK("data" < SELECT data_horario FROM jogo j WHERE j.id = jogo),
-
-  CONSTRAINT fk_usuario
-      FOREIGN KEY(usuario) 
-	      REFERENCES Usuario(id),
-  CONSTRAINT fk_jogo
-    FOREIGN KEY(jogo) 
-      REFERENCES Jogo(id),
-  
-);
-
 CREATE TABLE IF NOT EXISTS Jogo (
   id integer NOT NULL PRIMARY KEY UNIQUE,
   "local" varchar(256) NOT NULL,
@@ -32,6 +14,7 @@ CREATE TABLE IF NOT EXISTS Jogo (
   timeA integer NOT NULL,
   timeB integer NOT NULL,
   campeonato varchar(256),
+  numero_de_resenhas integer NOT NULL,
 
   CONSTRAINT fk_timeA
       FOREIGN KEY(timeA) 
@@ -39,6 +22,23 @@ CREATE TABLE IF NOT EXISTS Jogo (
   CONSTRAINT fk_timeB
       FOREIGN KEY(timeB) 
 	      REFERENCES "time"(id)
+);
+
+CREATE TABLE IF NOT EXISTS Apostas (
+  id integer NOT NULL PRIMARY KEY UNIQUE,
+  valor double precision NOT NULL,
+  tipo varchar(256) NOT NULL,
+  lucro_ou_perda varchar(256) NOT NULL,
+  usuario integer NOT NULL,
+  jogo integer NOT NULL,
+  "data" timestamp NOT NULL,
+
+  CONSTRAINT fk_usuario
+      FOREIGN KEY(usuario) 
+	      REFERENCES Usuario(id),
+  CONSTRAINT fk_jogo
+    FOREIGN KEY(jogo) 
+      REFERENCES Jogo(id)
 );
 
 CREATE TABLE IF NOT EXISTS "time" (
@@ -50,11 +50,11 @@ CREATE TABLE IF NOT EXISTS "time" (
 CREATE TABLE IF NOT EXISTS Jogador (
   id integer NOT NULL PRIMARY KEY UNIQUE,
   nome varchar(256) NOT NULL,
-  data_de_nascimeno DATE NOT NULL,
-  local_de_nascimento varchar(256) NOT NULL,
+  data_de_nascimento DATE NOT NULL,
+  local_de_nascimento varchar(256),
   numero_de_resenhas int8,
-  height integer,
-  weight decimal,
+  altura integer,
+  peso decimal,
   "time" integer,
   CONSTRAINT fk_time
       FOREIGN KEY("time")
@@ -63,6 +63,5 @@ CREATE TABLE IF NOT EXISTS Jogador (
 
 CREATE TABLE IF NOT EXISTS Deposito (
   id integer NOT NULL PRIMARY KEY UNIQUE,
-  codigo int8,
   valor double precision
 );
