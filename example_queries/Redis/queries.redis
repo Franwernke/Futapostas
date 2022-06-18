@@ -1,0 +1,15 @@
+// Autenticar usuário
+
+get john.doe@email.com; // Deve devolver a senha dele 
+get patrick.silva@email.com; // Deve devolver nada porque e-mail não existe
+
+// Obter resenhas
+
+    // Obter primeira página de resenha do jogador de código 160
+get players-160-reviews-1; // Devolve JSON contendo as resenhas 
+
+    // Obter primeira página de resenha do time de código 50 
+get teams-50-reviews-1; // Devolve JSON contendo as resenhas
+
+get teams-999-reviews-1; // Devolve nada porque time não existe
+

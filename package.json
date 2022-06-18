@@ -16,6 +16,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "neo4j-driver": "^4.4.6",
     "pg": "^8.7.3",
     "redis": "^4.1.0"

@@ -1,22 +1,25 @@
 import neo4j from "neo4j-driver";
 import fileSystem from "fs";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const URI = process.env.NEO4J_URI;
 const USER = process.env.NEO4J_USER;
 const PASSWORD = process.env.NEO4J_PASSWORD;
 
 const Nodes = {
-  Jogo: { fields: ["Data", "Resultado"] },
-  Usuário: { fields: ["Email"] },
+  Jogo: { fields: ["Codigo", "Data", "Resultado"] },
+  Usuario: { fields: ["Codigo", "Email"] },
 };
 
 const Arcs = {
-  APOSTA: { fields: ["Valor"] },
-  CARTÃO_AMARELO: { fields: ["Número"] },
-  CARTÃO_VERMELHO: { fields: ["Número"] },
+  APOSTA: { fields: ["Codigo", "Valor"] },
+  CARTAO_AMARELO: { fields: ["Numero"] },
+  CARTAO_VERMELHO: { fields: ["Numero"] },
   TIME: { fields: ["Resultado"] },
-  GOLS: { fields: ["Número"] },
-  TITULAR: { fields: ["Presença", "CódigoDoJogador"] },
+  GOLS: { fields: ["Numero"] },
+  TITULAR: { fields: ["Presenca", "CodigoDoJogador"] },
 };
 
 const getConnection = () => {
@@ -38,7 +41,12 @@ const stringify = (object) => {
   let objectAsString = "{ ";
 
   for (const key in object) {
-    objectAsString += `${key}: "${object[key]}", `;
+    objectAsString += `${key}: `;
+    if (["number", "boolean"].includes(typeof object[key])) {
+      objectAsString += `${object[key]}, `;
+    } else {
+      objectAsString += `"${object[key]}", `;
+    }
   }
 
   return objectAsString.slice(0, -2) + " }";
@@ -68,32 +76,40 @@ const insertNode = async (session, row, nodeLabel) => {
     return false;
   }
 
-  await session.run(`MERGE (:${nodeLabel} ${stringify(row)})`);
+  const query = `MERGE (:${nodeLabel} ${stringify(row)})`;
+
+  await session.run(query);
+  fileSystem.appendFileSync("populate_neo4j.cypher", query + ";\n");
 
   return true;
 };
 
-const insertArc = async (session, arc, arcLabel, firstNode, secondNode) => {
-  const fields = Arcs[arcLabel]?.fields;
+const insertArc = async (session, arc, arcLabels, firstNode, secondNode) => {
+  const fields = arcLabels
+    .split(":")
+    .map((label) => Arcs[label]?.fields || [])
+    .reduce((allFields, currentFields) => [...allFields, ...currentFields]);
 
   if (!fields) {
+    console.log("ALERTA @ insertArc - Inserção não sucedeu por não ter campos");
     return false;
   }
 
-  if (Object.keys(row).some((key) => !fields.includes(key))) {
+  if (Object.keys(arc).some((key) => !fields.includes(key))) {
+    console.log("ALERTA @ insertArc - Inserção não sucedeu por falta de campos");
+    console.log("\tEsperado: " + fields.join(", "));
+    console.log("\tObtido: " + Object.keys(arc).join(", "));
     return false;
   }
 
-  await session.run(
-    `
-      MATCH 
-        (a:${firstNode.label}),
-        (b:${secondNode.label})
-      WHERE a.${firstNode.key} = ${firstNode.value} AND
-            B${secondNode.key} = ${secondNode.value}
-      MERGE (a)-[:${arcLabel} ${JSON.stringify(arc)}]->(b)
-    `
-  );
+  const parsedArcLabels = `:${arcLabels.split(":").slice(1).join("_")}`;
+
+  const query = `
+    MATCH \n\t(a${firstNode.label}),\n\t(b${secondNode.label}) \nWHERE a.${firstNode.key} = ${firstNode.value} AND\n\t  b.${secondNode.key} = ${secondNode.value} \nMERGE (a)-[${parsedArcLabels} ${stringify(arc)}]->(b)
+    `.trim();
+
+  await session.run(query);
+  fileSystem.appendFileSync("populate_neo4j.cypher", query + ";\n");
 
   return true;
 };
@@ -105,9 +121,24 @@ const parseUsersData = () => {
     return;
   }
 
-  return JSON.parse(buffer.toString()).map(user => ({
-    "Email": user.email
+  return JSON.parse(buffer.toString()).map((user) => ({
+    Codigo: user.id,
+    Email: user.email,
   }));
+};
+
+const parseResult = (game) => {
+  const score = game.info.final_score.split(" - ");
+
+  if (score[0] === score[1]) {
+    return "empate";
+  }
+
+  if (score[0] > score[1]) {
+    return Number(game.info.homeTeam_id);
+  }
+
+  return Number(game.info.awayTeam_id);
 };
 
 const parseGamesData = () => {
@@ -118,20 +149,87 @@ const parseGamesData = () => {
   }
 
   return JSON.parse(buffer.toString()).map((game) => ({
-    "Data": game.info.event_date,
-    "Resultado": game.info.final_score,
+    Codigo: game.id,
+    Data: game.info.event_date,
+    Resultado: parseResult(game),
   }));
 };
 
+const getBetLabel = (bet) => {
+  switch (bet["tipo"]) {
+    case "escalação":
+      return ":APOSTA:TITULAR";
+    case "time_vencedor":
+    case "empate":
+      return ":APOSTA:TIME";
+    default:
+      console.log("ERRO @ betToArc - Tipo de aposta não reconhecido");
+      process.exit();
+  }
+};
+
+const betToArc = (bet) => {
+  const commonFields = {
+    Codigo: bet["id"],
+    Valor: bet["valor"],
+  };
+
+  switch (bet["tipo"]) {
+    case "escalação":
+      return {
+        ...commonFields,
+        CodigoDoJogador: bet["referencia"],
+        Presenca: true,
+      };
+    case "time_vencedor":
+      return {
+        ...commonFields,
+        Resultado: bet["referencia"],
+      };
+    case "empate":
+      return {
+        ...commonFields,
+        Resultado: "empate",
+      };
+    default:
+      console.log("ERRO @ getBetLabel - Tipo de aposta não reconhecido");
+      process.exit();
+  }
+};
+
 const parseBetsData = () => {
-  console.log("ERRO @ parseBetsData - Nada aqui");
+  let buffer;
+
+  try {
+    buffer = fileSystem.readFileSync("./processedData/betsId.json");
+  } catch (error) {
+    console.log("ERRO @ parseBetsData - Não foi possível ler o arquivo");
+    return [];
+  }
+
+  const bets = JSON.parse(buffer.toString());
+
+  return bets.map((bet) => ({
+    arc: betToArc(bet),
+    label: getBetLabel(bet),
+    firstNode: {
+      label: ":Usuario",
+      key: "Codigo",
+      value: bet["usuario"],
+    },
+    secondNode: {
+      label: ":Jogo",
+      key: "Codigo",
+      value: bet["jogo"],
+    },
+  }));
 };
 
 const insertUsers = async (session) => {
   const users = parseUsersData();
 
   for (const user of users) {
-    await insertNode(session, user, "Usuário");
+    await insertNode(session, user, "Usuario");
   }
 };
 
@@ -158,9 +256,12 @@ const populateDatabase = async () => {
     process.exit();
   }
 
+  fileSystem.appendFileSync("./populate_neo4j.cypher", "// INSERINDO USUÁRIOS\n\n");
   await insertUsers(session);
+  fileSystem.appendFileSync("./populate_neo4j.cypher", "\n// INSERINDO JOGOS\n\n");
   await insertGames(session);
-  // await insertBets(session);
+  fileSystem.appendFileSync("./populate_neo4j.cypher", "\n// INSERINDO APOSTAS\n\n");
+  await insertBets(session);
 
   closeConnection(session);
 

@@ -15,7 +15,8 @@
     "lucro_ou_perda": "perda",
     "usuario": 1,
     "jogo": 350,
-    "data": "2018-03-01T10:00:00+00:00"
+    "data": "2018-03-01T10:00:00+00:00",
+    "referencia": 190 
   },
   {
     "id": 3,
@@ -24,7 +25,8 @@
     "lucro_ou_perda": "lucro",
     "usuario": 1,
     "jogo": 377,
-    "data": "2019-03-26T22:00:00+00:00"
+    "data": "2019-03-26T22:00:00+00:00",
+    "referencia": 39
   },
   {
     "id": 4,
@@ -42,7 +44,8 @@
     "lucro_ou_perda": "lucro",
     "usuario": 1,
     "jogo": 259,
-    "data": "2018-12-28T23:00:00+00:00"
+    "data": "2018-12-28T23:00:00+00:00",
+    "referencia": 18988
   },
   {
     "id": 6,
@@ -51,7 +54,8 @@
     "lucro_ou_perda": "lucro",
     "usuario": 2,
     "jogo": 80,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 35
   },
   {
     "id": 7,
@@ -60,7 +64,8 @@
     "lucro_ou_perda": "lucro",
     "usuario": 2,
     "jogo": 350,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 33
   },
   {
     "id": 8,
@@ -69,7 +74,8 @@
     "lucro_ou_perda": "perda",
     "usuario": 2,
     "jogo": 75,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 34  
   },
   {
     "id": 9,
@@ -78,7 +84,8 @@
     "lucro_ou_perda": "lucro",
     "usuario": 2,
     "jogo": 99,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 68125
   },
   {
     "id": 10,
@@ -87,7 +94,8 @@
     "lucro_ou_perda": "perda",
     "usuario": 2,
     "jogo": 416,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 50
   },
   {
     "id": 11,
@@ -114,7 +122,8 @@
     "lucro_ou_perda": "lucro",
     "usuario": 3,
     "jogo": 274,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 52
   },
   {
     "id": 14,
@@ -123,7 +132,8 @@
     "lucro_ou_perda": "perda",
     "usuario": 3,
     "jogo": 259,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 2933
   },
   {
     "id": 15,
@@ -132,6 +142,7 @@
     "lucro_ou_perda": "lucro",
     "usuario": 3,
     "jogo": 75,
-    "data": "2018-09-01T14:00:00+00:00"
+    "data": "2018-09-01T14:00:00+00:00",
+    "referencia": 34
   }
 ]
