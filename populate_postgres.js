@@ -3,12 +3,48 @@ import fs from 'fs'
 import { exit } from 'process';
 
 const Tables = {
-  jogador: {name: 'jogador', numOfFields: 8},
-  time: {name: 'time', numOfFields: 3},
-  jogo: {name: 'jogo', numOfFields: 6},
-  usuario: {name: 'usuario', numOfFields: 6},
-  apostas: {name: 'apostas', numOfFields: 6},
-  deposito: {name: 'deposito', numOfFields: 3},
+  jogador: {name: 'jogador', numOfFields: 8, fields: [
+    'id',
+    'nome',
+    'data_de_nascimento',
+    'local_de_nascimento',
+    'numero_de_resenhas',
+    'altura',
+    'peso',
+    'time',
+  ]},
+  time: {name: 'time', numOfFields: 3, fields: [
+    'id',
+    'nome',
+    'numero_de_resenhas'
+  ]},
+  jogo: {name: 'jogo', numOfFields: 7, fields: [
+    'id',
+    'local',
+    'data_horario',
+    'timea',
+    'timeb',
+    'campeonato',
+    'numero_de_resenhas'
+  ]},
+  usuario: {name: 'usuario', numOfFields: 6, fields: [
+    'id',
+    'carteira',
+    'privacidade_do_perfil',
+    'cpf',
+    'nome',
+    'email'
+  ]},
+  apostas: {name: 'apostas', numOfFields: 7, fields: [
+    'id',
+    'valor', 
+    'tipo',
+    'lucro_ou_perda',
+    'usuario',
+    'jogo',
+    'data',
+  ]},
+  deposito: {name: 'deposito', numOfFields: 3, fields: ['id', 'valor']},
 }
 
 export async function connect() {
@@ -48,18 +84,23 @@ async function insertRow(db, table, values, numOfValues) {
     valueIndexes += i === 1 ? `$${i}` : `,$${i}`;
   }
   try {
-    await db.query(`INSERT INTO ${table} VALUES (${valueIndexes})`, values);
+    const printValues = values.map((valu) => typeof valu === 'string' ? `\'${valu}\'` : valu);
+    if (printValues.length === Tables[table].numOfFields) {
+      fs.appendFileSync('./populate.sql', `INSERT INTO ${table}(${Tables[table].fields}) VALUES (${printValues});\n`, (err) => {
+        console.log(err)
+      });
+    }
   } catch (e) {
     if (e.code === '23505') {
       console.log('Este Id já existe');
-      return Promise.resolve()
+      return Promise.resolve();
     }
   }
 }
 
 async function populate_postgres(allTeams, allPlayers, allFixtures, allUsers, allBets) {
   const db = await connect();
-  
+
   const allPromises = [];
   allTeams.forEach(
     team => 
@@ -107,13 +148,13 @@ function parseJogadorData(allTeams) {
     const {name, birth, height, weight} = allData[i].info;
     const { team: playerTeam } = allData[i].statistics[0]
     const desiredValues = [
-      id, 
-      name, 
-      birth.date, 
-      birth.place, 
-      0, 
+      id,
+      name,
+      birth.date,
+      birth.place,
+      0,
       height != null ? parseInt(height.split()[0]) : null,
-      weight != null ? parseInt(weight.split()[0]) : null, 
+      weight != null ? parseInt(weight.split()[0]) : null,
       playerTeam.name ? allTeams.find((team) => team[1] === playerTeam.name)[0] : null,
     ];
     allPlayers.push(desiredValues);
@@ -150,7 +191,8 @@ function parseJogoData() {
       event_date,
       Number(homeTeam_id),
       Number(awayTeam_id),
-      round
+      round,
+      0
     ];
     allFixtures.push(desiredValues);
   }
@@ -185,14 +227,15 @@ function parseApostaData() {
   const allBets = [];
 
   for (let i = 0; i < allData.length; i++) {
-    const {id, valor, tipo, lucro_ou_perda, usuario, jogo} = allData[i];
+    const {id, valor, tipo, lucro_ou_perda, usuario, jogo, data} = allData[i];
     const desiredValues = [
       id,
       valor, 
       tipo, 
       lucro_ou_perda,
       usuario,
-      jogo
+      jogo,
+      data
     ];
     allBets.push(desiredValues);
   }
